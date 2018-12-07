@@ -1,5 +1,13 @@
-<tr id="<%= note.id %>">
-  <td><%= note.content %></td>
-  <td><%= link_to 'Edit', edit_note_path(note) %></td>
-  <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?', remote: true } %></td>
-</tr>
+
+
+<li id="nota_<%= note.id %>">
+  <a target="_blank" >Nota de: <%= note.user.name %></a>
+  
+  <div class="card">
+    <div class="card-body">
+     <%= note.content %>
+    </div>
+  </div>
+  <a href="#" class="float-right"><%= link_to 'Edit', edit_note_path(note), class:'btn btn-warning' %></a>
+  <a href="#" class="float-right"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class:'btn btn-danger'  %></a>
+</li>

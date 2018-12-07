@@ -27,7 +27,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.user = current_user
-
+    @notes = current_user.notes
     respond_to do |format|
       if @note.save
         format.js
@@ -56,6 +56,7 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     @note.destroy
+    @notes = current_user.notes
     respond_to do |format|
       format.js
     end
