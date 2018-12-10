@@ -1,0 +1,18 @@
+<h1>Notes</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% for note in @notes %>
+        <div class='note'>
+            <strong> <%= note.content %> </strong>
+        </div>
+      <% end %>
+     </tr>       
+  </tbody>
+</table>

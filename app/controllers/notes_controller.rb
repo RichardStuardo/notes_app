@@ -6,9 +6,11 @@ class NotesController < ApplicationController
   # GET /notes.json
   def index
     @notes = current_user.notes.order("created_at DESC")
+    @notes = Note.search(params[:term]) if params[:term]
     @note = Note.new
-  end
 
+  end
+  
   # GET /notes/1
   # GET /notes/1.json
   def show
@@ -28,7 +30,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.user = current_user
-    @notes = current_user.notes
+    @notes = current_user.notes.order("created_at DESC")
     respond_to do |format|
       if @note.save
         format.js
@@ -57,7 +59,7 @@ class NotesController < ApplicationController
   # DELETE /notes/1.json
   def destroy
     @note.destroy
-    @notes = current_user.notes
+    @notes = current_user.notes.order("created_at DESC")
     respond_to do |format|
       format.js
     end
@@ -71,6 +73,6 @@ class NotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def note_params
-      params.require(:note).permit(:content)
+      params.require(:note).permit(:content, :term)
     end
 end
