@@ -15,3 +15,4 @@
 //= require turbolinks
 //= stub active_admin
 //= require_tree .
+

@@ -1,15 +1,25 @@
 
 
 <li id="nota_<%= note.id %>">
-  <a target="_blank" >Nota de: <%= note.user.name %></a>
-  <a target="_blank"class="target" >Creado el: <%= note.created_at %></a>
+  <div class="container bootstrap snippet">
+    <div class="row">
+    	<ul class="notes">   
+            <li>
+                <div class="rotate-1 yellow-bg item">
+                    <small><%= note.created_at.strftime("%b %d, %Y") %></small>
+                      <div class="col-md-6">
+                        <h4>Note of: <%= note.user.name %></h4>
+                        <p class="nombres"><%= note.content %></p>
+                        <a href="#" class="text-danger pull-right"><i class="fa fa-trash-o "></i></a>
+                      </div>  
+                </div>
+            </li>   
+		</ul>  
+      <%= link_to 'X', note, method: :delete, data: { confirm: 'Are you sure?', 
+      remote: true }, class:'btn btn-danger btn-circle btn-lg' 
+  %>
+	</div>
+</div>
 
-  
-  <div class="card">
-    <div class="card-body">
-     <%= note.content %>
-    </div>
-  </div>
-  <a href="#" class="float-right"><%= link_to 'Edit', edit_note_path(note), class:'btn btn-warning' %></a>
-  <a href="#" class="float-right"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class:'btn btn-danger'  %></a>
 </li>
+

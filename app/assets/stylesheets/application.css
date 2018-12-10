@@ -20,7 +20,28 @@ body { background-color: lightcyan;
 }
 .logo{
     height: 251px;
+    height: 251px;
+    position: relative;
+    top: 27px;
 }
 .height{
     height: 100px;
 }
+
+.logo2{
+    width: 80px;
+}
+.logo3{
+    width: 169px;
+}
+.admin-logo{
+    width: 30px;
+}
+
+.navbar-color{
+    background-color: darkturquoise;
+}
+.top{
+    height: 80px;
+}
+
