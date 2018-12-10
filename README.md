@@ -5,20 +5,33 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Aplicación para CompartoMiMaleta 
 
-* System dependencies
+* Ruby version 2.5.3
 
-* Configuration
+* Rails 5.2.2
 
-* Database creation
+* Competencias
 
-* Database initialization
+- Javascript Básico
+- Jquery Básico
+- Ajax Básico
+- CSS3
+- HTML5
+- Bootstrap 4
+- Ruby
+- Postgress
+- Rails
+- Control de Versiones
+- GitHub
+- Heroku
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+* Gemas ocupadas:
+- Devise
+- ActiveAdmin
+- Bootsnap
 
-* Deployment instructions
+* Desarrollador Richard Stuardo
 
 * Link para App Heroku https://hidden-waters-98638.herokuapp.com/
